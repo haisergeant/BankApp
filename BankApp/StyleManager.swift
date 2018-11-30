@@ -12,12 +12,15 @@ import BonMot
 struct StyleManager {
     static let shared = StyleManager()
     
-    let lightFontName = "HelveticaNeue-Light"
-    let regularLightFont = UIFont(name: StyleManager.shared.lightFontName, size: 16.0)
-    let largeLightFont = UIFont(name: StyleManager.shared.lightFontName, size: 18.0)
+    static let lightFontName = "HelveticaNeue-Light"
+    let regularLightFont = UIFont(name: StyleManager.lightFontName, size: 16.0) ?? UIFont.systemFont(ofSize: 16.0)
+    let largeLightFont = UIFont(name: StyleManager.lightFontName, size: 18.0) ?? UIFont.systemFont(ofSize: 18.0)
     
-    let regularFontName = "HelveticaNeue"
-    let boldFontName = "HelveticaNeue-Bold"
+    static let regularFontName = "HelveticaNeue"
+    let regularFont = UIFont(name: StyleManager.regularFontName, size: 16.0) ?? UIFont.systemFont(ofSize: 16.0)
+    
+    static let boldFontName = "HelveticaNeue-Bold"
+    let boldFont = UIFont(name: StyleManager.boldFontName, size: 16.0) ?? UIFont.boldSystemFont(ofSize: 16.0)
     
     let marbleColor = UIColor(red: 146.0 / 255.0, green: 176.0 / 255.0, blue: 176.0 / 255.0, alpha: 1.0)
     
@@ -27,5 +30,26 @@ struct StyleManager {
     
     let yellowColor = UIColor(red: 255.0 / 255.0, green: 204.0 / 255.0, blue: 0.0 / 255.0, alpha: 1.0)
 
-    
+}
+
+struct TransactionStyle {
+    static let titleStyle = StringStyle(.font(StyleManager.shared.regularFont),
+                                        .color(StyleManager.shared.blackColor))
+    static let amountStyle = StringStyle(.font(StyleManager.shared.regularFont),
+                                         .color(StyleManager.shared.blackColor))
+}
+
+struct AccountViewStyle {
+    static let accountNameStyle = StringStyle(.font(StyleManager.shared.largeLightFont),
+                                              .color(StyleManager.shared.blackColor))
+    static let accountNumberStyle = StringStyle(.font(StyleManager.shared.regularLightFont),
+                                              .color(StyleManager.shared.greyColor))
+    static let availableFundStyle = StringStyle(.font(StyleManager.shared.regularLightFont),
+                                              .color(StyleManager.shared.greyColor))
+    static let accountBalanceStyle = StringStyle(.font(StyleManager.shared.regularLightFont),
+                                              .color(StyleManager.shared.greyColor))
+    static let fundAmountStyle = StringStyle(.font(StyleManager.shared.regularLightFont),
+                                              .color(StyleManager.shared.blackColor))
+    static let balanceAmountStyle = StringStyle(.font(StyleManager.shared.regularLightFont),
+                                              .color(StyleManager.shared.greyColor))
 }

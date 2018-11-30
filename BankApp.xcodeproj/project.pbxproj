@@ -31,6 +31,7 @@
 		E884EB3121AFCFE3001C0616 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884EB3021AFCFE3001C0616 /* StyleManager.swift */; };
 		E884EB3321AFE1A7001C0616 /* AccountInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884EB3221AFE1A7001C0616 /* AccountInformationView.swift */; };
 		E884EB3521AFE42D001C0616 /* AccountInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E884EB3421AFE42D001C0616 /* AccountInformationView.xib */; };
+		E884EB3721B028C5001C0616 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884EB3621B028C5001C0616 /* NibView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		E884EB3021AFCFE3001C0616 /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		E884EB3221AFE1A7001C0616 /* AccountInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformationView.swift; sourceTree = "<group>"; };
 		E884EB3421AFE42D001C0616 /* AccountInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInformationView.xib; sourceTree = "<group>"; };
+		E884EB3621B028C5001C0616 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 				E82F126421AF565C0011BE46 /* BaseTableViewCell.swift */,
 				E82F126521AF565C0011BE46 /* BaseView.swift */,
 				E82F126621AF565C0011BE46 /* BaseViewController.swift */,
+				E884EB3621B028C5001C0616 /* NibView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				E884EB2F21AF9109001C0616 /* TransactionsViewModel.swift in Sources */,
 				E82F126B21AF56B60011BE46 /* TransactionTableViewCell.swift in Sources */,
 				E884EB2B21AF6FC0001C0616 /* ATMLocation.swift in Sources */,
+				E884EB3721B028C5001C0616 /* NibView.swift in Sources */,
 				E82F126821AF565C0011BE46 /* BaseView.swift in Sources */,
 				E884EB2D21AF86B6001C0616 /* Constants.swift in Sources */,
 				E884EB3121AFCFE3001C0616 /* StyleManager.swift in Sources */,

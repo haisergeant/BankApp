@@ -21,7 +21,7 @@ class ServerRepository: Repository {
     private lazy var decoder: JSONDecoder = {
         let decoder = JSONDecoder()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         decoder.dateDecodingStrategy = .formatted(dateFormatter)
         return decoder
     }()
@@ -37,7 +37,7 @@ class ServerRepository: Repository {
                             if let error = error {
                                 observer.onError(error)
                             } else if let data = data {
-                                let accTransaction = try self.decoder.decode(AccountTransaction.self, from: data)
+                                var accTransaction = try self.decoder.decode(AccountTransaction.self, from: data)
                                 observer.onNext(accTransaction)
                             }
                         } catch {

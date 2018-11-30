@@ -17,9 +17,18 @@ struct TransactionViewModel {
     struct Style {
         let titleStyle: StringStyle
         let amountStyle: StringStyle
+        init(titleStyle: StringStyle = TransactionStyle.titleStyle,
+             amountStyle: StringStyle = TransactionStyle.amountStyle) {
+            self.titleStyle = titleStyle
+            self.amountStyle = amountStyle
+        }
     }
     
-    
+    init(transaction: Transaction, style: Style = Style()) {
+        self.transaction = transaction
+        title = transaction.description.styled(with: style.titleStyle)
+        amount = String(format: "$%.2f", transaction.amount).styled(with: style.amountStyle)
+    }
 }
 
 class TransactionTableViewCell: BaseTableViewCell {
@@ -28,6 +37,7 @@ class TransactionTableViewCell: BaseTableViewCell {
     @IBOutlet weak var amountLabel: UILabel!
     
     func configure(viewModel: TransactionViewModel) {
-        
+        titleLabel.attributedText = viewModel.title
+        amountLabel.attributedText = viewModel.amount
     }
 }

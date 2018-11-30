@@ -7,18 +7,33 @@
 //
 
 import UIKit
+import NSObject_Rx
 
 class TransactionsViewController: BaseViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     private let viewModel = TransactionsViewModel()
+    private let headerView = AccountInformationView().loadNib()
+    
+    override func configureSubviews() {
+        super.configureSubviews()
+        tableView.tableHeaderView = headerView
+    }
     
     override func configureContent() {
         super.configureContent()
         viewModel.request()
-        
+        viewModel.transactionsObservable.subscribe(onNext: { [weak self] viewModels in
+            self?.tableView.reloadData()
+            
+            }, onError: { [weak self] error in
+                self?.showErrorMessage(title: "Error", message: error.localizedDescription)
+        }).disposed(by: rx.disposeBag)
     }
     
+    override func navigationTitle() -> String {
+        return "Account Details"
+    }
 }
 
 extension TransactionsViewController: UITableViewDelegate {
