@@ -37,7 +37,7 @@ class ServerRepository: Repository {
                             if let error = error {
                                 observer.onError(error)
                             } else if let data = data {
-                                var accTransaction = try self.decoder.decode(AccountTransaction.self, from: data)
+                                let accTransaction = try self.decoder.decode(AccountTransaction.self, from: data)
                                 observer.onNext(accTransaction)
                             }
                         } catch {

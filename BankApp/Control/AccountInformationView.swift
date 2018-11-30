@@ -54,7 +54,7 @@ struct AccountInformationViewModel {
         accountBalance = "Account balance".styled(with: style.accountBalanceStyle)
         
         fundAmount = String(format: "$%.2f", account.available).styled(with: style.fundAmountStyle)
-        balanceAmount = String(format: "%.2f", account.balance).styled(with: style.balanceAmountStyle)
+        balanceAmount = String(format: "$%.2f", account.balance).styled(with: style.balanceAmountStyle)
     }
 }
 

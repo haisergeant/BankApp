@@ -33,4 +33,24 @@ class TransactionsViewModel {
             self?.transactions.onError(error)
         }).disposed(by: disposeBag)
     }
+    
+    func numberOfSection() -> Int {
+        return 1
+    }
+    
+    func numberOfRows(in section: Int) -> Int {
+        do {
+            return try transactions.value().count
+        } catch {
+            return 0
+        }
+    }
+    
+    func transaction(at index: Int) -> TransactionViewModel? {
+        do {
+            return try transactions.value()[index]
+        } catch {
+            return nil
+        }
+    }
 }

@@ -27,7 +27,8 @@ struct TransactionViewModel {
     init(transaction: Transaction, style: Style = Style()) {
         self.transaction = transaction
         title = transaction.description.styled(with: style.titleStyle)
-        amount = String(format: "$%.2f", transaction.amount).styled(with: style.amountStyle)
+        amount = String(format: transaction.amount > 0 ? "$%.2f" : "-$%.2f" , abs(transaction.amount))
+            .styled(with: style.amountStyle)
     }
 }
 
@@ -39,5 +40,7 @@ class TransactionTableViewCell: BaseTableViewCell {
     func configure(viewModel: TransactionViewModel) {
         titleLabel.attributedText = viewModel.title
         amountLabel.attributedText = viewModel.amount
+        
+        amountLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
     }
 }
