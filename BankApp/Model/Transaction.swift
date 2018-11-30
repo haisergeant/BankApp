@@ -13,4 +13,5 @@ struct Transaction: Decodable {
     let effectiveDate: Date
     let description: String
     let amount: Double
+    let atmId: String?
 }

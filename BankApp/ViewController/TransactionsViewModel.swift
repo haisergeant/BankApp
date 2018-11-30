@@ -53,4 +53,14 @@ class TransactionsViewModel {
             return nil
         }
     }
+    
+    func handleTapOnTransaction(at index: Int) -> (atm: ATMLocation, transaction: TransactionViewModel)? {
+        if let atm = accountTransaction,
+            let model = transaction(at: index),
+            let atmId = model.transaction.atmId,
+            let firstATM = atm.atms.first(where: { $0.id == atmId }) {
+            return (atm: firstATM, transaction: model)
+        }
+        return nil
+    }
 }

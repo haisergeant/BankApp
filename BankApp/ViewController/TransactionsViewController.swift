@@ -22,6 +22,8 @@ class TransactionsViewController: BaseViewController {
         return view
     }()
     
+    private var selectedATMTransaction: (ATMLocation, TransactionViewModel)?
+    
     override func configureSubviews() {
         super.configureSubviews()
         tableView.tableHeaderView = headerView
@@ -47,10 +49,26 @@ class TransactionsViewController: BaseViewController {
     override func navigationTitle() -> String {
         return "Account Details"
     }
+    
+    override func shouldHideNavigationBar() -> Bool {
+        return false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let next = segue.destination as? MapViewController, let atmModel = selectedATMTransaction {
+            next.atmLocation = atmModel.0
+            next.transaction = atmModel.1
+        }
+    }
 }
 
 extension TransactionsViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let atmModel = viewModel.handleTapOnTransaction(at: indexPath.row) {
+            selectedATMTransaction = atmModel
+            self.performSegue(withIdentifier: "toMapView", sender: self)
+        }
+    }
 }
 
 extension TransactionsViewController: UITableViewDataSource {

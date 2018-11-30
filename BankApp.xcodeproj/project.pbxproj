@@ -32,6 +32,7 @@
 		E884EB3321AFE1A7001C0616 /* AccountInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884EB3221AFE1A7001C0616 /* AccountInformationView.swift */; };
 		E884EB3521AFE42D001C0616 /* AccountInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E884EB3421AFE42D001C0616 /* AccountInformationView.xib */; };
 		E884EB3721B028C5001C0616 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884EB3621B028C5001C0616 /* NibView.swift */; };
+		E884EB3921B18BF9001C0616 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884EB3821B18BF9001C0616 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		E884EB3221AFE1A7001C0616 /* AccountInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformationView.swift; sourceTree = "<group>"; };
 		E884EB3421AFE42D001C0616 /* AccountInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInformationView.xib; sourceTree = "<group>"; };
 		E884EB3621B028C5001C0616 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		E884EB3821B18BF9001C0616 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 			children = (
 				E82F125B21AF3CEE0011BE46 /* TransactionsViewController.swift */,
 				E884EB2E21AF9109001C0616 /* TransactionsViewModel.swift */,
+				E884EB3821B18BF9001C0616 /* MapViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				E82F126821AF565C0011BE46 /* BaseView.swift in Sources */,
 				E884EB2D21AF86B6001C0616 /* Constants.swift in Sources */,
 				E884EB3121AFCFE3001C0616 /* StyleManager.swift in Sources */,
+				E884EB3921B18BF9001C0616 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -89,11 +89,44 @@
                     <navigationItem key="navigationItem" title="Account Details" id="ou3-y1-XuU"/>
                     <connections>
                         <outlet property="tableView" destination="4rY-2r-wkJ" id="Yrc-dK-kNa"/>
+                        <segue destination="2TW-dQ-Az0" kind="show" identifier="toMapView" id="kSu-eW-vrU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jyM-7n-mtH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="328.80000000000001" y="15.742128935532236"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="5Zn-2X-mg7">
+            <objects>
+                <viewController id="2TW-dQ-Az0" customClass="MapViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gFv-Wy-6iK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NxG-mD-HOb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2TW-dQ-Az0" id="CtI-Kx-dAP"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NxG-mD-HOb" firstAttribute="top" secondItem="lon-5G-oYE" secondAttribute="top" id="bGW-e2-97J"/>
+                            <constraint firstItem="lon-5G-oYE" firstAttribute="bottom" secondItem="NxG-mD-HOb" secondAttribute="bottom" id="bvO-Uk-bwQ"/>
+                            <constraint firstItem="lon-5G-oYE" firstAttribute="trailing" secondItem="NxG-mD-HOb" secondAttribute="trailing" id="jld-hi-TtN"/>
+                            <constraint firstItem="NxG-mD-HOb" firstAttribute="leading" secondItem="lon-5G-oYE" secondAttribute="leading" id="z0T-wV-rZU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lon-5G-oYE"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="NxG-mD-HOb" id="yfu-rL-ET5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DUs-c9-D71" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1184.8" y="15.742128935532236"/>
         </scene>
     </scenes>
 </document>
