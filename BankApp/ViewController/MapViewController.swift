@@ -31,7 +31,7 @@ class MapViewController: BaseViewController {
             mapView.addAnnotation(annotation)
             
             // Set region
-            let region = MKCoordinateRegionMake(location.location, MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+            let region = MKCoordinateRegionMake(location.location, MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
             mapView.setRegion(region, animated: true)
         }
     }
