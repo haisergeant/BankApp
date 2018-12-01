@@ -26,7 +26,8 @@ struct TransactionViewModel {
     
     init(transaction: Transaction, style: Style = Style()) {
         self.transaction = transaction
-        title = transaction.description.styled(with: style.titleStyle)
+        let description = transaction.description.replacingOccurrences(of: "<br/>", with: "\n")        
+        title = description.styled(with: style.titleStyle)
         amount = String(format: transaction.amount > 0 ? "$%.2f" : "-$%.2f" , abs(transaction.amount))
             .styled(with: style.amountStyle)
     }

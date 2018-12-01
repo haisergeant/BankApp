@@ -15,6 +15,10 @@ class MapViewController: BaseViewController {
     
     @IBOutlet private weak var mapView: MKMapView!
     
+    override func navigationTitle() -> String {
+        return "ATM Location"
+    }
+    
     override func shouldHideNavigationBar() -> Bool {
         return false
     }

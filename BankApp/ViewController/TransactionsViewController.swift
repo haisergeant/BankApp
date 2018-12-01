@@ -27,7 +27,8 @@ class TransactionsViewController: BaseViewController {
     override func configureSubviews() {
         super.configureSubviews()
         tableView.tableHeaderView = headerView
-        
+        tableView.register(SectionHeaderView.self,
+                           forHeaderFooterViewReuseIdentifier: String(describing: SectionHeaderView.self))
     }
     
     override func configureContent() {
@@ -64,6 +65,7 @@ class TransactionsViewController: BaseViewController {
 
 extension TransactionsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if let atmModel = viewModel.handleTapOnTransaction(at: indexPath) {
             selectedATMTransaction = atmModel
             self.performSegue(withIdentifier: "toMapView", sender: self)
@@ -78,6 +80,29 @@ extension TransactionsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows(in: section)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: String(describing: SectionHeaderView.self)) as? SectionHeaderView
+        if view?.content == nil {
+            let subview = TitleSubtitleView()
+            view?.contentView.addSubview(subview)
+            subview.translatesAutoresizingMaskIntoConstraints = false
+            view?.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[childView]|",
+                                                          options: [],
+                                                          metrics: nil,
+                                                          views: ["childView": subview]))
+            view?.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[childView]|",
+                                                          options: [],
+                                                          metrics: nil,
+                                                          views: ["childView": subview]))
+            view?.content = subview
+        }
+        
+        if let content = view?.content as? TitleSubtitleView {
+            content.configure(viewModel: viewModel.sectionHeaderModel(in: section))
+        }
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

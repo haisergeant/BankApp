@@ -21,6 +21,7 @@
 		E82F126821AF565C0011BE46 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F126521AF565C0011BE46 /* BaseView.swift */; };
 		E82F126921AF565C0011BE46 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F126621AF565C0011BE46 /* BaseViewController.swift */; };
 		E82F126B21AF56B60011BE46 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F126A21AF56B60011BE46 /* TransactionTableViewCell.swift */; };
+		E8404D8B21B29289005E5E66 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8404D8A21B29289005E5E66 /* DateExtension.swift */; };
 		E884EB2321AF5F89001C0616 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884EB2221AF5F89001C0616 /* Repository.swift */; };
 		E884EB2521AF6032001C0616 /* ServerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884EB2421AF6032001C0616 /* ServerRepository.swift */; };
 		E884EB2721AF65B6001C0616 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884EB2621AF65B6001C0616 /* Account.swift */; };
@@ -33,6 +34,8 @@
 		E884EB3521AFE42D001C0616 /* AccountInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E884EB3421AFE42D001C0616 /* AccountInformationView.xib */; };
 		E884EB3721B028C5001C0616 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884EB3621B028C5001C0616 /* NibView.swift */; };
 		E884EB3921B18BF9001C0616 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884EB3821B18BF9001C0616 /* MapViewController.swift */; };
+		E884EB3B21B286F8001C0616 /* TitleSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884EB3A21B286F8001C0616 /* TitleSubtitleView.swift */; };
+		E884EB3D21B28736001C0616 /* TitleSubtitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E884EB3C21B28736001C0616 /* TitleSubtitleView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,7 @@
 		E82F126521AF565C0011BE46 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E82F126621AF565C0011BE46 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E82F126A21AF56B60011BE46 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		E8404D8A21B29289005E5E66 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		E884EB2221AF5F89001C0616 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		E884EB2421AF6032001C0616 /* ServerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRepository.swift; sourceTree = "<group>"; };
 		E884EB2621AF65B6001C0616 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 		E884EB3421AFE42D001C0616 /* AccountInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInformationView.xib; sourceTree = "<group>"; };
 		E884EB3621B028C5001C0616 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		E884EB3821B18BF9001C0616 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E884EB3A21B286F8001C0616 /* TitleSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubtitleView.swift; sourceTree = "<group>"; };
+		E884EB3C21B28736001C0616 /* TitleSubtitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleSubtitleView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +214,8 @@
 			children = (
 				E82F126321AF565C0011BE46 /* Base */,
 				E82F126A21AF56B60011BE46 /* TransactionTableViewCell.swift */,
+				E884EB3A21B286F8001C0616 /* TitleSubtitleView.swift */,
+				E884EB3C21B28736001C0616 /* TitleSubtitleView.xib */,
 				E884EB3221AFE1A7001C0616 /* AccountInformationView.swift */,
 				E884EB3421AFE42D001C0616 /* AccountInformationView.xib */,
 			);
@@ -217,6 +225,7 @@
 		E82F125721AF3CD50011BE46 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E8404D8A21B29289005E5E66 /* DateExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -371,6 +380,7 @@
 			files = (
 				E82F123321AEC18B0011BE46 /* LaunchScreen.storyboard in Resources */,
 				E884EB3521AFE42D001C0616 /* AccountInformationView.xib in Resources */,
+				E884EB3D21B28736001C0616 /* TitleSubtitleView.xib in Resources */,
 				E82F123021AEC18B0011BE46 /* Assets.xcassets in Resources */,
 				E82F122E21AEC18A0011BE46 /* Main.storyboard in Resources */,
 			);
@@ -480,10 +490,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E884EB3B21B286F8001C0616 /* TitleSubtitleView.swift in Sources */,
 				E884EB2521AF6032001C0616 /* ServerRepository.swift in Sources */,
 				E884EB2321AF5F89001C0616 /* Repository.swift in Sources */,
 				E82F126921AF565C0011BE46 /* BaseViewController.swift in Sources */,
 				E884EB3321AFE1A7001C0616 /* AccountInformationView.swift in Sources */,
+				E8404D8B21B29289005E5E66 /* DateExtension.swift in Sources */,
 				E82F125C21AF3CEE0011BE46 /* TransactionsViewController.swift in Sources */,
 				E884EB2921AF6FAB001C0616 /* Transaction.swift in Sources */,
 				E82F126721AF565C0011BE46 /* BaseTableViewCell.swift in Sources */,

@@ -11,7 +11,7 @@ import Foundation
 struct Transaction: Decodable {
     let id: String
     let effectiveDate: Date
-    let description: String
+    var description: String
     let amount: Double
     let atmId: String?
 }

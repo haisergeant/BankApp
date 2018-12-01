@@ -30,12 +30,27 @@ struct StyleManager {
     
     let yellowColor = UIColor(red: 255.0 / 255.0, green: 204.0 / 255.0, blue: 0.0 / 255.0, alpha: 1.0)
 
+    func boldFontStyle() -> StringStyle {
+        return StringStyle(.font(StyleManager.shared.boldFont),
+                           .color(StyleManager.shared.blackColor))
+    }
 }
 
 struct TransactionStyle {
     static let titleStyle = StringStyle(.font(StyleManager.shared.regularFont),
+                                        .color(StyleManager.shared.blackColor),
+                                        .xmlRules([
+                                            .style("bold", StyleManager.shared.boldFontStyle()),
+                                            .style("b", StyleManager.shared.boldFontStyle())]))
+    
+    static let amountStyle = StringStyle(.font(StyleManager.shared.boldFont),
+                                         .color(StyleManager.shared.blackColor))
+}
+
+struct TransactionHeaderStyle {
+    static let titleStyle = StringStyle(.font(StyleManager.shared.boldFont),
                                         .color(StyleManager.shared.blackColor))
-    static let amountStyle = StringStyle(.font(StyleManager.shared.regularFont),
+    static let subtitleStyle = StringStyle(.font(StyleManager.shared.boldFont),
                                          .color(StyleManager.shared.blackColor))
 }
 
