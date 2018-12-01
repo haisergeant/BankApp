@@ -18,9 +18,17 @@ class TransactionsViewModel {
     
     private(set) var account: AccountInformationViewModel?
     
-    private let transactions = BehaviorSubject<[TransactionViewModel]>(value: [TransactionViewModel]())
-    var transactionsObservable: Observable<[TransactionViewModel]> {
+    private let transactions = BehaviorSubject<[[TransactionViewModel]]>(value: [[TransactionViewModel]]())
+    var transactionsObservable: Observable<[[TransactionViewModel]]> {
         return transactions.asObservable()
+    }
+    
+    var groupedTransactions: [[TransactionViewModel]] {
+        do {
+            return try transactions.value()
+        } catch {
+            return [[TransactionViewModel]]()
+        }
     }
     
     func request() {
@@ -28,35 +36,37 @@ class TransactionsViewModel {
             .subscribe(onNext: { [weak self] accTransaction in
                 self?.accountTransaction = accTransaction
                 self?.account = AccountInformationViewModel(account: accTransaction.account)
-                self?.transactions.onNext(accTransaction.transactions.compactMap { TransactionViewModel(transaction: $0) })
+                
+                var data = accTransaction.transactions
+                data.append(contentsOf: accTransaction.pending)
+                data.sort { $0.effectiveDate < $1.effectiveDate }
+                
+                let transformData = data.compactMap { TransactionViewModel(transaction: $0) }
+                
+                let dictionary = Dictionary(grouping: transformData, by: { $0.transaction.effectiveDate })
+                let groupedList = dictionary.values
+                let list = groupedList.sorted { $0[0].transaction.effectiveDate < $1[0].transaction.effectiveDate }
+                self?.transactions.onNext(list)
         }, onError: { [weak self] error in
             self?.transactions.onError(error)
         }).disposed(by: disposeBag)
     }
     
     func numberOfSection() -> Int {
-        return 1
+        return groupedTransactions.count
     }
     
     func numberOfRows(in section: Int) -> Int {
-        do {
-            return try transactions.value().count
-        } catch {
-            return 0
-        }
+        return groupedTransactions[section].count
     }
     
-    func transaction(at index: Int) -> TransactionViewModel? {
-        do {
-            return try transactions.value()[index]
-        } catch {
-            return nil
-        }
+    func transaction(at indexPath: IndexPath) -> TransactionViewModel? {
+        return groupedTransactions[indexPath.section][indexPath.row]
     }
     
-    func handleTapOnTransaction(at index: Int) -> (atm: ATMLocation, transaction: TransactionViewModel)? {
+    func handleTapOnTransaction(at indexPath: IndexPath) -> (atm: ATMLocation, transaction: TransactionViewModel)? {
         if let atm = accountTransaction,
-            let model = transaction(at: index),
+            let model = transaction(at: indexPath),
             let atmId = model.transaction.atmId,
             let firstATM = atm.atms.first(where: { $0.id == atmId }) {
             return (atm: firstATM, transaction: model)

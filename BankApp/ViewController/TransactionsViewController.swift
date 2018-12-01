@@ -64,7 +64,7 @@ class TransactionsViewController: BaseViewController {
 
 extension TransactionsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let atmModel = viewModel.handleTapOnTransaction(at: indexPath.row) {
+        if let atmModel = viewModel.handleTapOnTransaction(at: indexPath) {
             selectedATMTransaction = atmModel
             self.performSegue(withIdentifier: "toMapView", sender: self)
         }
@@ -82,7 +82,7 @@ extension TransactionsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionTableViewCell", for: indexPath)
-        if let cell = cell as? TransactionTableViewCell, let model = viewModel.transaction(at: indexPath.row) {
+        if let cell = cell as? TransactionTableViewCell, let model = viewModel.transaction(at: indexPath) {
             cell.configure(viewModel: model)
         }
         return cell
