@@ -38,14 +38,14 @@
                                         <constraint firstAttribute="width" secondItem="9jk-9L-d6F" secondAttribute="height" multiplier="1:1" id="wvG-4P-c5s"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete Access" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nah-4A-4kh">
-                                    <rect key="frame" x="89.5" y="12" width="133.5" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nah-4A-4kh">
+                                    <rect key="frame" x="89.5" y="12" width="0.0" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="062005 17095888" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLd-iY-euW">
-                                    <rect key="frame" x="89.5" y="41" width="145" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLd-iY-euW">
+                                    <rect key="frame" x="89.5" y="41" width="0.0" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -60,6 +60,7 @@
                                 <constraint firstItem="9jk-9L-d6F" firstAttribute="leading" secondItem="1IT-xO-DKQ" secondAttribute="leading" constant="20" id="T1o-Ri-Oy6"/>
                                 <constraint firstItem="Nah-4A-4kh" firstAttribute="leading" secondItem="9jk-9L-d6F" secondAttribute="trailing" constant="19" id="YDH-Tl-dj3"/>
                                 <constraint firstItem="9jk-9L-d6F" firstAttribute="top" secondItem="1IT-xO-DKQ" secondAttribute="top" constant="12" id="czc-Bq-mQa"/>
+                                <constraint firstItem="Nah-4A-4kh" firstAttribute="height" secondItem="jLd-iY-euW" secondAttribute="height" id="d64-L1-Hbz"/>
                                 <constraint firstItem="jLd-iY-euW" firstAttribute="leading" secondItem="9jk-9L-d6F" secondAttribute="trailing" constant="19" id="e3Z-J4-ctr"/>
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nah-4A-4kh" secondAttribute="trailing" constant="20" id="qMi-Gr-JMz"/>
                                 <constraint firstAttribute="bottom" secondItem="9jk-9L-d6F" secondAttribute="bottom" constant="9" id="rX7-Bo-MRr"/>
@@ -75,26 +76,26 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rji-LE-DOO">
                             <rect key="frame" x="0.0" y="74" width="335" height="71"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available funds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABT-wW-TBm">
-                                    <rect key="frame" x="90" y="8" width="115.5" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABT-wW-TBm">
+                                    <rect key="frame" x="90" y="8" width="0.0" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$226.76" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDe-Vh-RUL">
-                                    <rect key="frame" x="256.5" y="7.5" width="64.5" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFr-20-D2h">
+                                    <rect key="frame" x="91" y="37" width="0.0" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFr-20-D2h">
-                                    <rect key="frame" x="91" y="37" width="128" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDe-Vh-RUL">
+                                    <rect key="frame" x="321" y="7" width="0.0" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$246.76" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yg5-pt-ZcH">
-                                    <rect key="frame" x="256" y="37" width="65" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yg5-pt-ZcH">
+                                    <rect key="frame" x="321" y="37" width="0.0" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -106,8 +107,10 @@
                                 <constraint firstItem="AFr-20-D2h" firstAttribute="leading" secondItem="Rji-LE-DOO" secondAttribute="leading" constant="91" id="6ya-PD-Urr"/>
                                 <constraint firstItem="AFr-20-D2h" firstAttribute="top" secondItem="ABT-wW-TBm" secondAttribute="bottom" constant="8" id="CK8-39-fpr"/>
                                 <constraint firstItem="LDe-Vh-RUL" firstAttribute="top" secondItem="Rji-LE-DOO" secondAttribute="top" constant="7.5" id="Cb4-yP-UIk"/>
+                                <constraint firstItem="ABT-wW-TBm" firstAttribute="height" secondItem="AFr-20-D2h" secondAttribute="height" id="Eko-ku-6pc"/>
                                 <constraint firstItem="Yg5-pt-ZcH" firstAttribute="top" secondItem="LDe-Vh-RUL" secondAttribute="bottom" constant="8.5" id="IRv-Qd-nkx"/>
                                 <constraint firstAttribute="bottom" secondItem="AFr-20-D2h" secondAttribute="bottom" constant="13.5" id="UXg-sa-bMq"/>
+                                <constraint firstItem="LDe-Vh-RUL" firstAttribute="height" secondItem="Yg5-pt-ZcH" secondAttribute="height" id="Zb5-9T-Xp1"/>
                                 <constraint firstItem="ABT-wW-TBm" firstAttribute="top" secondItem="Rji-LE-DOO" secondAttribute="top" constant="8" id="d5e-qx-RAn"/>
                                 <constraint firstItem="LDe-Vh-RUL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ABT-wW-TBm" secondAttribute="trailing" constant="20" id="eqF-fA-kYB"/>
                                 <constraint firstItem="ABT-wW-TBm" firstAttribute="leading" secondItem="Rji-LE-DOO" secondAttribute="leading" constant="90" id="fnr-LA-lGe"/>

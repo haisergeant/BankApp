@@ -33,10 +33,11 @@ class TransactionsViewController: BaseViewController {
     
     override func configureContent() {
         super.configureContent()
+        showHUD()
         viewModel.request()
         viewModel.transactionsObservable.subscribe(onNext: { [weak self] viewModels in
             guard let `self` = self else { return }
-            
+            self.hideHUD()
             if let model = self.viewModel.account {
                 self.headerView.configure(viewModel: model)
             }

@@ -45,8 +45,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FindUsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="e7O-jW-mV0">
+                                                    <rect key="frame" x="15" y="7" width="45" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="WGT-ar-veY"/>
+                                                        <constraint firstAttribute="width" constant="45" id="gEl-AF-1oa"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mm3-ID-o8t">
-                                                    <rect key="frame" x="15" y="19.5" width="42" height="20.5"/>
+                                                    <rect key="frame" x="70" y="19" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -61,17 +68,22 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mm3-ID-o8t" secondAttribute="bottom" constant="10" id="1pG-F9-UB5"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1Rm-rN-KjQ" secondAttribute="bottom" constant="10" id="7xx-FH-cAD"/>
+                                                <constraint firstItem="e7O-jW-mV0" firstAttribute="leading" secondItem="4G2-fD-ysu" secondAttribute="leading" constant="15" id="EKt-SE-GW4"/>
                                                 <constraint firstItem="mm3-ID-o8t" firstAttribute="centerY" secondItem="4G2-fD-ysu" secondAttribute="centerY" id="IB6-HE-46Q"/>
-                                                <constraint firstItem="mm3-ID-o8t" firstAttribute="leading" secondItem="4G2-fD-ysu" secondAttribute="leading" constant="15" id="KzN-rI-eSB"/>
                                                 <constraint firstItem="1Rm-rN-KjQ" firstAttribute="centerY" secondItem="4G2-fD-ysu" secondAttribute="centerY" id="LPG-8w-Eds"/>
+                                                <constraint firstItem="mm3-ID-o8t" firstAttribute="leading" secondItem="e7O-jW-mV0" secondAttribute="trailing" constant="10" id="TVA-3V-isX"/>
                                                 <constraint firstItem="mm3-ID-o8t" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4G2-fD-ysu" secondAttribute="top" constant="10" id="Tuv-at-GHJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="1Rm-rN-KjQ" secondAttribute="trailing" constant="15" id="UOJ-w4-zaI"/>
                                                 <constraint firstItem="1Rm-rN-KjQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4G2-fD-ysu" secondAttribute="top" constant="10" id="Xwi-bj-cCl"/>
                                                 <constraint firstItem="1Rm-rN-KjQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mm3-ID-o8t" secondAttribute="trailing" constant="20" id="f9Y-sw-nr9"/>
+                                                <constraint firstItem="e7O-jW-mV0" firstAttribute="top" secondItem="4G2-fD-ysu" secondAttribute="top" constant="7" id="sld-rW-IiZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="amountLabel" destination="1Rm-rN-KjQ" id="RGB-mU-H4s"/>
+                                            <outlet property="pinAndTitleSpacing" destination="TVA-3V-isX" id="i4g-bU-t8g"/>
+                                            <outlet property="pinImgView" destination="e7O-jW-mV0" id="bQq-PB-o91"/>
+                                            <outlet property="pinWidth" destination="gEl-AF-1oa" id="unH-8r-UQP"/>
                                             <outlet property="titleLabel" destination="mm3-ID-o8t" id="qnu-Uq-Jv1"/>
                                         </connections>
                                     </tableViewCell>
@@ -134,4 +146,7 @@
             <point key="canvasLocation" x="1184.8" y="15.742128935532236"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FindUsIcon" width="16" height="32"/>
+    </resources>
 </document>

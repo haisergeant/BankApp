@@ -63,8 +63,8 @@ struct AccountViewStyle {
                                               .color(StyleManager.shared.greyColor))
     static let accountBalanceStyle = StringStyle(.font(StyleManager.shared.regularLightFont),
                                               .color(StyleManager.shared.greyColor))
-    static let fundAmountStyle = StringStyle(.font(StyleManager.shared.regularLightFont),
+    static let fundAmountStyle = StringStyle(.font(StyleManager.shared.boldFont),
                                               .color(StyleManager.shared.blackColor))
-    static let balanceAmountStyle = StringStyle(.font(StyleManager.shared.regularLightFont),
+    static let balanceAmountStyle = StringStyle(.font(StyleManager.shared.boldFont),
                                               .color(StyleManager.shared.greyColor))
 }

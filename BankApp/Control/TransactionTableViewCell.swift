@@ -35,13 +35,22 @@ struct TransactionViewModel {
 
 class TransactionTableViewCell: BaseTableViewCell {
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet private weak var pinImgView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var amountLabel: UILabel!
+    @IBOutlet weak var pinWidth: NSLayoutConstraint!
+    @IBOutlet weak var pinAndTitleSpacing: NSLayoutConstraint!
     
     func configure(viewModel: TransactionViewModel) {
         titleLabel.attributedText = viewModel.title
         amountLabel.attributedText = viewModel.amount
         
         amountLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+        
+        pinImgView.isHidden = viewModel.transaction.atmId == nil
+        pinWidth.constant = viewModel.transaction.atmId == nil ? 0 : 45
+        pinAndTitleSpacing.constant = viewModel.transaction.atmId == nil ? 0 : 10
+            
+        
     }
 }
