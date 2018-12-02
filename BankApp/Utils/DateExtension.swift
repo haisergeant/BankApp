@@ -13,6 +13,8 @@ extension Date {
         let days = Calendar.current.dateComponents([.day], from: self, to: Date()).day
         if let days = days {
             switch days {
+            case 0:
+                return "Today"
             case 1:
                 return "Yesterday"
             default:
@@ -21,5 +23,9 @@ extension Date {
         } else {
             return ""
         }
+    }
+    
+    func numberOfDaysSince(date: Date) -> Int {
+        return Calendar.current.dateComponents([.day], from: self, to: date).day ?? 0
     }
 }

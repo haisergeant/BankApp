@@ -10,7 +10,7 @@ import UIKit
 import BonMot
 
 struct TransactionViewModel {
-    let transaction: Transaction
+    var transaction: Transaction?
     let title: NSAttributedString
     let amount: NSAttributedString
     
@@ -31,6 +31,15 @@ struct TransactionViewModel {
         amount = String(format: transaction.amount > 0 ? "$%.2f" : "-$%.2f" , abs(transaction.amount))
             .styled(with: style.amountStyle)
     }
+    
+    init(title: String, amount: Double, style: Style = Style()) {
+        self.title = title.styled(with: style.titleStyle)
+        self.amount = String(format: "$%.2f", fabs(amount)).styled(with: style.amountStyle)
+    }
+    
+    var date: Date {
+        return transaction?.effectiveDate ?? Date()
+    }
 }
 
 class TransactionTableViewCell: BaseTableViewCell {
@@ -47,9 +56,9 @@ class TransactionTableViewCell: BaseTableViewCell {
         
         amountLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
         
-        pinImgView.isHidden = viewModel.transaction.atmId == nil
-        pinWidth.constant = viewModel.transaction.atmId == nil ? 0 : 45
-        pinAndTitleSpacing.constant = viewModel.transaction.atmId == nil ? 0 : 10
+        pinImgView.isHidden = viewModel.transaction?.atmId == nil
+        pinWidth.constant = viewModel.transaction?.atmId == nil ? 0 : 45
+        pinAndTitleSpacing.constant = viewModel.transaction?.atmId == nil ? 0 : 10
             
         
     }
