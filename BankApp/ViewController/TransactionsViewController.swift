@@ -22,11 +22,18 @@ class TransactionsViewController: BaseViewController {
         return view
     }()
     
+    private lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.addTarget(self, action: #selector(requestService), for: .valueChanged)
+        return control
+    }()
+    
     private var selectedATMTransaction: (ATMLocation, TransactionViewModel)?
     
     override func configureSubviews() {
         super.configureSubviews()
         tableView.tableHeaderView = headerView
+        tableView.addSubview(refreshControl)
         tableView.register(SectionHeaderView.self,
                            forHeaderFooterViewReuseIdentifier: String(describing: SectionHeaderView.self))
     }
@@ -34,7 +41,7 @@ class TransactionsViewController: BaseViewController {
     override func configureContent() {
         super.configureContent()
         showHUD()
-        viewModel.request()
+        requestService()
         viewModel.transactionsObservable.subscribe(onNext: { [weak self] viewModels in
             guard let `self` = self else { return }
             self.hideHUD()
@@ -42,7 +49,7 @@ class TransactionsViewController: BaseViewController {
                 self.headerView.configure(viewModel: model)
             }
             self.tableView.reloadData()
-            
+            self.refreshControl.endRefreshing()
             }, onError: { [weak self] error in
                 self?.showErrorMessage(title: "Error", message: error.localizedDescription)
         }).disposed(by: rx.disposeBag)
@@ -61,6 +68,10 @@ class TransactionsViewController: BaseViewController {
             next.atmLocation = atmModel.0
             next.transaction = atmModel.1
         }
+    }
+    
+    @objc private func requestService() {
+        viewModel.request()
     }
 }
 
