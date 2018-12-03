@@ -57,7 +57,7 @@ class TransactionTableViewCell: BaseTableViewCell {
         amountLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
         
         pinImgView.isHidden = viewModel.transaction?.atmId == nil
-        pinWidth.constant = viewModel.transaction?.atmId == nil ? 0 : 45
+        pinWidth.constant = viewModel.transaction?.atmId == nil ? 0 : 35
         pinAndTitleSpacing.constant = viewModel.transaction?.atmId == nil ? 0 : 10
             
         
